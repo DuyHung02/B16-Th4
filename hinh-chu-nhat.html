@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp hình chữ nhật</title>
+</head>
+<body>
+<canvas id="myCanvas" width="800" height="400" style="border: 1px solid #0000FF"></canvas>
+<script>
+    class Rectangle {
+        x;
+        y;
+        chieudai;
+        chieurong;
+        constructor(x, y, chieudai, chieurong) {
+            this.x = x
+            this.y = y
+            this.chieudai = chieudai;
+            this.chieurong = chieurong;
+        }
+        getChieudai() {
+            return this.chieudai = chieudai;
+        }
+        getChieurong() {
+           return this.chieurong = chieurong;
+        }
+        getDientich() {
+            return this.chieudai * this.chieurong
+        }
+        getChuvi() {
+            return (this.chieudai + this.chieurong) * 2
+        }
+    }
+    // let hcn = new Rectangle(10, 5)
+    // document.write("Diện tích hình chữ nhật là: " + hcn.getDientich() + "<br>"
+    // + "Chu vi hình chữ nhật là: " + hcn.getChuvi())
+
+    function createhcn() {
+        let c = document.getElementById('myCanvas').getContext("2d");
+        let x = 100
+        let y = 100
+        let chieudai = +prompt("Nhập chiều dài: ")
+        let chieurong = +prompt("Nhập chiều rộng: ")
+        let hcn = new Rectangle(x, y, chieudai, chieurong);
+        c.fillStyle= '#0000FF';
+        c.fillRect(hcn.x, hcn.y, hcn.chieudai, hcn.chieurong);
+        document.write("Diện tích hình chữ nhật là: " + hcn.getDientich() + "<br>"
+        + "Chu vi hình chữ nhật là: " + hcn.getChuvi())
+    }
+    createhcn()
+</script>
+</body>
+</html>
